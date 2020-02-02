@@ -4,14 +4,34 @@
 \alias{plot_effect}
 \title{plotting the marginal effect of X on Y, with or without one or multiple interaction terms}
 \usage{
-plot_effect(reg.coef, data, model, by_color = FALSE, x_var.name = NULL,
-  y_var.name = NULL, moderator.name = NULL, min_x = 0.001,
-  max_x = 0.999, mdrt_quantile_05 = NULL, mdrt_quantile_50 = NULL,
-  mdrt_quantile_95 = NULL, mod.n.sd = 1, confidence_interval = FALSE,
-  v = NULL, CI_Ribbon = FALSE, title = NULL, xlab = "X_Var.name",
-  ylab = "Y_Var.name", moderator.lab = "Moderator_name",
-  mdrt.low.name = "Low", mdrt.mid.name = NULL,
-  mdrt.high.name = "High", y.high.lim = NULL, y.low.lim = NULL)
+plot_effect(
+  reg.coef,
+  data,
+  model,
+  by_color = FALSE,
+  x_var.name = NULL,
+  y_var.name = NULL,
+  moderator.name = NULL,
+  min_x = 0.001,
+  max_x = 0.999,
+  mdrt_quantile_05 = NULL,
+  mdrt_quantile_50 = NULL,
+  mdrt_quantile_95 = NULL,
+  mod.n.sd = 1,
+  confidence_interval = FALSE,
+  v = NULL,
+  CI_Ribbon = FALSE,
+  title = NULL,
+  xlab = "X_Var.name",
+  ylab = "Y_Var.name",
+  moderator.lab = "Moderator_name",
+  mdrt.low.name = "Low",
+  mdrt.mid.name = NULL,
+  mdrt.high.name = "High",
+  y.high.lim = NULL,
+  y.low.lim = NULL,
+  spline_labels = c("LHS", "RHS")
+)
 }
 \arguments{
 \item{reg.coef}{a coefficient matrix of regression result, e.g. summary(lm_model)$coef}
@@ -63,6 +83,8 @@ plot_effect(reg.coef, data, model, by_color = FALSE, x_var.name = NULL,
 \item{y.high.lim}{specify the upper limit of y}
 
 \item{y.low.lim}{specify the lower limit of y}
+
+\item{spline_labels}{label of the spline variable}
 }
 \description{
 plotting the marginal effect of X on Y, with or without one or multiple interaction terms
@@ -70,19 +92,19 @@ plotting the marginal effect of X on Y, with or without one or multiple interact
 \examples{
 data(mtcars)
 m1 <- lm(mpg ~ vs + carb + hp + wt + wt * hp , data = mtcars)
-plot_effect(reg.coef = summary(m1)$coefficients, 
-                 data = mtcars, model = m1, 
-                 x_var.name = "wt", y_var.name = "mpg", moderator.name = "hp", 
-                 confidence_interval = TRUE,  CI_Ribbon = TRUE, 
+plot_effect(reg.coef = summary(m1)$coefficients,
+                 data = mtcars, model = m1,
+                 x_var.name = "wt", y_var.name = "mpg", moderator.name = "hp",
+                 confidence_interval = TRUE,  CI_Ribbon = TRUE,
                  xlab = "Weight", ylab = "MPG", moderator.lab = "Horsepower")
 
 #' @examples
 data(mtcars)
 m2 <- lm(mpg ~ vs + carb + hp + wt + wt * hp + wt * vs, data = mtcars)
-plot_effect(reg.coef = summary(m2)$coefficients, 
-            data = mtcars, model = m2, 
-            x_var.name = "wt", y_var.name = "mpg", moderator.name = "hp", 
-            confidence_interval = TRUE,  CI_Ribbon = FALSE, 
+plot_effect(reg.coef = summary(m2)$coefficients,
+            data = mtcars, model = m2,
+            x_var.name = "wt", y_var.name = "mpg", moderator.name = "hp",
+            confidence_interval = TRUE,  CI_Ribbon = FALSE,
             xlab = "Weight", ylab = "MPG", moderator.lab = "Horsepower")
 
 \dontrun{

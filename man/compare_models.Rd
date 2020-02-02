@@ -4,13 +4,32 @@
 \alias{compare_models}
 \title{Compare regression models, which is compatible with the reg.table output # updated 9/13/2018 #}
 \usage{
-compare_models(model1, model2, model3 = NULL, model4 = NULL,
-  model5 = NULL, model6 = NULL, model7 = NULL, model8 = NULL,
-  model9 = NULL, model10 = NULL, model11 = NULL, model12 = NULL,
-  model13 = NULL, model14 = NULL, model15 = NULL, model16 = NULL,
-  model17 = NULL, model18 = NULL, model19 = NULL, model20 = NULL,
-  likelihood.only = FALSE, round.digit = 3, main.effect.only = NULL,
-  intn.effect.only = NULL)
+compare_models(
+  model1,
+  model2,
+  model3 = NULL,
+  model4 = NULL,
+  model5 = NULL,
+  model6 = NULL,
+  model7 = NULL,
+  model8 = NULL,
+  model9 = NULL,
+  model10 = NULL,
+  model11 = NULL,
+  model12 = NULL,
+  model13 = NULL,
+  model14 = NULL,
+  model15 = NULL,
+  model16 = NULL,
+  model17 = NULL,
+  model18 = NULL,
+  model19 = NULL,
+  model20 = NULL,
+  likelihood.only = FALSE,
+  round.digit = 3,
+  main.effect.only = NULL,
+  intn.effect.only = NULL
+)
 }
 \arguments{
 \item{model1}{the 1st  regression model}
@@ -33,25 +52,25 @@ compare_models(model1, model2, model3 = NULL, model4 = NULL,
 
 \item{model10}{the 10th regression model}
 
-\item{model11}{the 10th regression model}
+\item{model11}{the 11th regression model}
 
-\item{model12}{the 10th regression model}
+\item{model12}{the 12th regression model}
 
-\item{model13}{the 10th regression model}
+\item{model13}{the 13th regression model}
 
-\item{model14}{the 10th regression model}
+\item{model14}{the 14th regression model}
 
-\item{model15}{the 10th regression model}
+\item{model15}{the 15th regression model}
 
-\item{model16}{the 10th regression model}
+\item{model16}{the 16th regression model}
 
-\item{model17}{the 10th regression model}
+\item{model17}{the 17th regression model}
 
-\item{model18}{the 10th regression model}
+\item{model18}{the 18th regression model}
 
-\item{model19}{the 10th regression model}
+\item{model19}{the 19th regression model}
 
-\item{model20}{the 10th regression model}
+\item{model20}{the 20th regression model}
 
 \item{likelihood.only}{whether or not to output the likelihood}
 

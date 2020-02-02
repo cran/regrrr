@@ -19,11 +19,11 @@
 #' @export
 to_long_tab <- function(reg.coef, d = 3, t.value.col = 3, Pr.col = 4){
   
-  if(!class(reg.coef) %in% c("matrix", "data.frame", "coeftest")){stop("reg.coef needs to be a data.frame or an coeftest object")}
+  if(!class(reg.coef)[1] %in% c("matrix", "data.frame", "coeftest")){stop("reg.coef needs to be a data.frame or an coeftest object")}
   
   tryCatch({
   
-  if(class(reg.coef) == "coeftest"){
+  if(class(reg.coef)[1] == "coeftest"){
       reg.coef <- as.data.frame(`[`(reg.coef))
   }  
     
@@ -51,7 +51,7 @@ to_long_tab <- function(reg.coef, d = 3, t.value.col = 3, Pr.col = 4){
   key <- NULL
   
   test <- cbind(var_ = rownames(df), reg.coef[,c(1:3, ncol(reg.coef))])
-  digits <- function(x,d){ if(class(x)=="numeric") {formatC(x, format = "f", digits = d)} else{x} }
+  digits <- function(x,d){ if(class(x)[1]=="numeric") {formatC(x, format = "f", digits = d)} else{x} }
   test <- data.frame(purrr::map(test, digits, d)) 
   test <- tidyr::unite(test, Estimate, 3, 5, sep="") # this joins the beta_hat values with sig. marks
   test[,4]  <- paste0("(",test[,4],")") # this put the s.e.'s into parenthesis
@@ -77,16 +77,16 @@ to_long_tab <- function(reg.coef, d = 3, t.value.col = 3, Pr.col = 4){
 #' @param tbl_8  the 8th  data.frame of regression result
 #' @param tbl_9  the 9th  data.frame of regression result
 #' @param tbl_10 the 10th data.frame of regression result
-#' @param tbl_11 the 10th data.frame of regression result
-#' @param tbl_12 the 10th data.frame of regression result
-#' @param tbl_13 the 10th data.frame of regression result
-#' @param tbl_14 the 10th data.frame of regression result
-#' @param tbl_15 the 10th data.frame of regression result
-#' @param tbl_16 the 10th data.frame of regression result
-#' @param tbl_17 the 10th data.frame of regression result
-#' @param tbl_18 the 10th data.frame of regression result
-#' @param tbl_19 the 10th data.frame of regression result
-#' @param tbl_20 the 10th data.frame of regression result
+#' @param tbl_11 the 11th data.frame of regression result
+#' @param tbl_12 the 12th data.frame of regression result
+#' @param tbl_13 the 13th data.frame of regression result
+#' @param tbl_14 the 14th data.frame of regression result
+#' @param tbl_15 the 15th data.frame of regression result
+#' @param tbl_16 the 16th data.frame of regression result
+#' @param tbl_17 the 17th data.frame of regression result
+#' @param tbl_18 the 18th data.frame of regression result
+#' @param tbl_19 the 19th data.frame of regression result
+#' @param tbl_20 the 20th data.frame of regression result
 #' 
 #' @examples 
 #' data(mtcars)
@@ -132,16 +132,16 @@ combine_long_tab <- function(tbl_1, tbl_2, tbl_3=NULL, tbl_4=NULL, tbl_5=NULL, t
 #' @param model8  the 8th  regression model
 #' @param model9  the 9th  regression model
 #' @param model10 the 10th regression model
-#' @param model11 the 10th regression model
-#' @param model12 the 10th regression model
-#' @param model13 the 10th regression model
-#' @param model14 the 10th regression model
-#' @param model15 the 10th regression model
-#' @param model16 the 10th regression model
-#' @param model17 the 10th regression model
-#' @param model18 the 10th regression model
-#' @param model19 the 10th regression model
-#' @param model20 the 10th regression model
+#' @param model11 the 11th regression model
+#' @param model12 the 12th regression model
+#' @param model13 the 13th regression model
+#' @param model14 the 14th regression model
+#' @param model15 the 15th regression model
+#' @param model16 the 16th regression model
+#' @param model17 the 17th regression model
+#' @param model18 the 18th regression model
+#' @param model19 the 19th regression model
+#' @param model20 the 20th regression model
 #' 
 #' @param likelihood.only whether or not to output the likelihood
 #' @param round.digit number of decimal places to retain

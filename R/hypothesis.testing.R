@@ -1,5 +1,5 @@
 #' significance of regression slope (the marginal effect) under moderation
-#' testing restriction: the sig. of beta_x under the moderation of z1, with or without additional interaction terms, Aug 13th
+#' testing restriction: the sig. of beta_x under the moderation of z1, with or without additional interaction terms (z2, z3, etc.)
 #'
 #' @param reg.coef a data.frame (or matrix) of regression result or a coeftest object, e.g. summary(lm_model)$coef, coeftest(lm_model, cluster.vcov(lm_model, cbind(data$group1,  data$group2)))
 #' @param v a customized variance-covariance matrix
@@ -31,9 +31,9 @@ test_tilted_slopes <- function(reg.coef, v = NULL, model, x_var.name, moderator.
 
   tryCatch({
     
-  if(!class(reg.coef) %in% c("matrix", "data.frame", "coeftest")){stop("reg.coef needs to be a data.frame or an coeftest object")}
+  if(!class(reg.coef)[1] %in% c("matrix", "data.frame", "coeftest")){stop("reg.coef needs to be a data.frame or an coeftest object")}
   
-  if(class(reg.coef) == "coeftest"){
+  if(class(reg.coef)[1] == "coeftest"){
     reg.coef <- as.data.frame(`[`(reg.coef))
   }
   
