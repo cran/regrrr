@@ -1,6 +1,3 @@
-# regrrr 0.1.1
+# regrrr 0.1.2
 
-* bugs fixed
-
-
-
+* enhanced plotting capability for linear splines
