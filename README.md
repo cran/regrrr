@@ -13,7 +13,7 @@ library(regrrr)
 ```
 You can also use devtools to install the latest development version:
 ```
-devtools::install_github("raykyang/regrrr")
+devtools::install_github("RkzYang/regrrr")
 library(regrrr)
 ```
 
